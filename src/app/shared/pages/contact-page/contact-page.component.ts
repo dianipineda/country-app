@@ -5,8 +5,4 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './contact-page.component.html',
   styles: [],
 })
-export class ContactPageComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class ContactPageComponent {}

@@ -4,10 +4,10 @@ import { HomePageComponent } from './shared/pages/homePage/homePage.component';
 import { AboutComponent } from './shared/pages/about/about.component';
 import { ContactPageComponent } from './shared/pages/contact-page/contact-page.component';
 const routes: Routes = [
-  {
-    path: 'home',
-    component: HomePageComponent,
-  },
+  // {
+  //   path: 'home',
+  //   component: HomePageComponent,
+  // },
   {
     path: 'about',
     component: AboutComponent,
@@ -16,10 +16,15 @@ const routes: Routes = [
     path: 'contact',
     component: ContactPageComponent,
   },
+  {
+    path: 'countries',
+    loadChildren: () =>
+      import('./countries/countries.module').then((m) => m.CountriesModule),
+  },
   //nota: cualquier ruta que no sea about, home, contact, va a navegar al home
   {
     path: '**',
-    redirectTo: 'home',
+    redirectTo: 'countries',
   },
 ];
 //si es mi rout principal debo ponerle el método .forRoot(routes)
